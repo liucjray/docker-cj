@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    php-nginx:
+      container_name: cj-server
+      image: webdevops/php-nginx-dev:centos-7-php56
+      ports:
+       - 80:80
+      restart: always
+      environment:
+        - php.session.cookie_lifetime=3600
+      volumes:
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/oaoa.local.conf:/opt/docker/etc/nginx/conf.d/oaoa.local.conf
+      - D:\NYD\:/app # 專案資料夾
+      links:
+       - memcached
+
+    memcached:
+      container_name: cj-memcached
+      image: memcached
+      ports:
+        - "11211:11211"
