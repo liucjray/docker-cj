@@ -2,10 +2,10 @@ version: '2'
 
 services:
     php-nginx:
-      container_name: cj-server
+      container_name: oa-server
       image: webdevops/php-nginx-dev:centos-7-php56
       ports:
-       - 80:80
+       - 8888:80
       restart: always
       environment:
         - php.session.cookie_lifetime=3600
@@ -16,7 +16,7 @@ services:
        - memcached
 
     memcached:
-      container_name: cj-memcached
+      container_name: oa-memcached
       image: memcached
       ports:
         - "11211:11211"
