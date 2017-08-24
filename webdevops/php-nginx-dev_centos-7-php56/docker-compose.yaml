@@ -2,21 +2,38 @@ version: '2'
 
 services:
     php-nginx:
-      container_name: oa-server
+      container_name: cj-server
       image: webdevops/php-nginx-dev:centos-7-php56
       ports:
-       - 8888:80
+       - 80:80
       restart: always
-      environment:
-        - php.session.cookie_lifetime=3600
+      # environment:
+        # - php.session.cookie_lifetime=3600
       volumes:
+      ### oa ###
       - ./php-nginx/opt/docker/etc/nginx/conf.d/oaoa.local.conf:/opt/docker/etc/nginx/conf.d/oaoa.local.conf
-      - D:\NYD\:/app # 專案資料夾
+      ### r88 ###
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88.local.conf:/opt/docker/etc/nginx/conf.d/www.r88.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88app.local.conf:/opt/docker/etc/nginx/conf.d/www.r88app.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88wap.local.conf:/opt/docker/etc/nginx/conf.d/www.r88wap.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88admin.local.conf:/opt/docker/etc/nginx/conf.d/www.r88admin.local.conf
+      ### sy1 ###
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy.local.conf:/opt/docker/etc/nginx/conf.d/www.sy.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.syapp.local.conf:/opt/docker/etc/nginx/conf.d/www.syapp.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sywap.local.conf:/opt/docker/etc/nginx/conf.d/www.sywap.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.syadmin.local.conf:/opt/docker/etc/nginx/conf.d/www.syadmin.local.conf
+      ### sy2 ###
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2app.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2app.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2wap.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2wap.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2admin.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2admin.local.conf
+      ### projects ###
+      - D:\NYD\:/app 
       links:
        - memcached
 
     memcached:
-      container_name: oa-memcached
+      container_name: cj-memcached
       image: memcached
       ports:
         - "11211:11211"
