@@ -21,6 +21,7 @@ services:
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy.local.conf:/opt/docker/etc/nginx/conf.d/www.sy.local.conf
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.syapp.local.conf:/opt/docker/etc/nginx/conf.d/www.syapp.local.conf
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sywap.local.conf:/opt/docker/etc/nginx/conf.d/www.sywap.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sywap-devtemp.local.conf:/opt/docker/etc/nginx/conf.d/www.sywap-devtemp.local.conf
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.syadmin.local.conf:/opt/docker/etc/nginx/conf.d/www.syadmin.local.conf
       ### sy2 ###
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2.local.conf
