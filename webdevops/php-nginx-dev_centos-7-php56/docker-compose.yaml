@@ -10,6 +10,8 @@ services:
       # environment:
         # - php.session.cookie_lifetime=3600
       volumes:
+      ### test.local ###
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/test.local.conf:/opt/docker/etc/nginx/conf.d/test.local.conf
       ### oa ###
       - ./php-nginx/opt/docker/etc/nginx/conf.d/oaoa.local.conf:/opt/docker/etc/nginx/conf.d/oaoa.local.conf
       ### r88 ###
