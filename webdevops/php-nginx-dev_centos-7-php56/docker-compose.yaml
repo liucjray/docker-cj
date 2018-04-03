@@ -5,7 +5,7 @@ services:
       container_name: cj-server
       image: webdevops/php-nginx-dev:centos-7-php56
       ports:
-       - 80:80
+       - 8888:80
       restart: always
       # environment:
         # - php.session.cookie_lifetime=3600
@@ -14,6 +14,7 @@ services:
       - ./php-nginx/opt/docker/etc/nginx/conf.d/test.local.conf:/opt/docker/etc/nginx/conf.d/test.local.conf
       ### oa ###
       - ./php-nginx/opt/docker/etc/nginx/conf.d/oaoa.local.conf:/opt/docker/etc/nginx/conf.d/oaoa.local.conf
+      - ./php-nginx/opt/docker/etc/nginx/conf.d/oaoa567.local.conf:/opt/docker/etc/nginx/conf.d/oaoa567.local.conf
       ### r88 ###
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88.local.conf:/opt/docker/etc/nginx/conf.d/www.r88.local.conf
       - ./php-nginx/opt/docker/etc/nginx/conf.d/www.r88app.local.conf:/opt/docker/etc/nginx/conf.d/www.r88app.local.conf
