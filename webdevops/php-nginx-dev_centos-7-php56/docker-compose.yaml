@@ -6,7 +6,7 @@ services:
       container_name: cj-server
       image: webdevops/php-nginx-dev:centos-7-php56
       ports:
-       - 8888:80
+       - 80:80
       restart: always
       # environment:
         # - php.session.cookie_lifetime=3600
@@ -33,7 +33,7 @@ services:
 #      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2wap.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2wap.local.conf
 #      - ./php-nginx/opt/docker/etc/nginx/conf.d/www.sy2admin.local.conf:/opt/docker/etc/nginx/conf.d/www.sy2admin.local.conf
       ### projects ###
-      - ~/nyd/:/app 
+      - ~/nyd-win-mount/:/app
       links:
        - memcached
       mem_limit: 1G
