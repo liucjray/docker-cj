@@ -6,7 +6,7 @@ services:
       container_name: cj-server
       image: webdevops/php-nginx-dev:centos-7-php56
       ports:
-       - 80:80
+       - 8888:80
       restart: always
       # environment:
         # - php.session.cookie_lifetime=3600
